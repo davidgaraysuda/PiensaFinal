@@ -20,7 +20,7 @@ class TeacherController {
         return teacherService.list()
     }
 
-    @GetMapping("/with/careeer")
+    @GetMapping("/with/career")
     fun listTeacherFull (): List<TeacherView>{
         return teacherService.listTeacher()
     }

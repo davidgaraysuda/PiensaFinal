@@ -11,8 +11,6 @@ class Specific {
     @Column(updatable = false)
     var id: Long? = null
     var status:Boolean?=null
-    @Column(name="company_id")
-    var companyId:Long?=null
     @Column(name="career_id")
     var careerId:Long?=null
 }

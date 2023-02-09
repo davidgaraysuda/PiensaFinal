@@ -14,7 +14,7 @@ class Agreement {
     var fechaInicio: Date?=null
     @Column(name="fecha_fin")
     var fechaFin: Date?=null
-    var state:String?=null
+    var status:Boolean?=null
     @Column(name="company_id")
     var companyId:Long?=null
     @Column(name="teacher_id")
