@@ -29,10 +29,6 @@ class CarreraService {
     fun save(carrera: Carrera):Carrera{
         return carreraRepository.save(carrera)
     }
-    fun listProfesor(): List<CarreraView> {
-
-        return CarreraViewRepository.findAll()
-    }
 
     fun update(carrera: Carrera):Carrera{
         val response =carreraRepository.findById(carrera.id)

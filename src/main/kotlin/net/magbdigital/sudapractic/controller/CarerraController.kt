@@ -18,13 +18,10 @@ class CarerraController {
     fun list(): List<Carrera>{
         return carreraService.list()
     }
+
     @GetMapping("/{id}")
-    fun listById (@PathVariable("id") id: Long): Carrera?{
+    fun listById (@PathVariable("id") id: Long): Carrera? {
         return carreraService.listById(id)
-    }
-    @GetMapping("/with/profesor")
-    fun listPr(): List<CarreraView>{
-        return carreraService.listProfesor()
     }
 
 
