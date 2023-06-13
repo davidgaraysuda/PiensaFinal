@@ -22,13 +22,13 @@ class PracticeService {
     @Autowired
     lateinit var studentService: StudentService
     @Autowired
-    lateinit var carreraService: CarreraService
+    lateinit var tutorService: TutorService
     @Autowired
     lateinit var practiceDetailService: PracticeDetailService
     @Autowired
-    lateinit var tutorService: TutorService
+    lateinit var teacherService: TeacherService
     @Autowired
-    lateinit var companyService: CompanyService
+    lateinit var activityService: ActivityService
 
 
     fun list(): List<Practice> {
@@ -54,9 +54,9 @@ class PracticeService {
 
         val practice =listById(id)
         val student = studentService.listById(practice?.studentId)
-        val career = carreraService.listById(student?.careerId)
+        val teacher = teacherService.listById(practice?.teacherId)
         val tutor= tutorService.listById(practice?.tutorId)
-        val company= companyService.listById(tutor?.companyId)
+        val activity= activityService.listById(practice?.activityId)
 
         response.apply {
             var simpleDateFormat = SimpleDateFormat("LLLL")
@@ -65,15 +65,16 @@ class PracticeService {
             endDate=simpleDateFormat.format(practice?.endDate).toString()
             studentNui=student?.nui.toString()
             studentName=student?.name + ' ' +student?.lastname
-            careerName=career?.name
-            companyName=company?.name
+            teacherName=teacher?.name
+            tutorName=tutor?.name
+            activityName=activity?.description
             practiceDetails=practiceDetailService.listDetailByPracticeToDto(id,dateStartFormat,dateEndFormat)
         }
         return response
     }
 
     fun save(practice:Practice):Practice{
-        practice.apply { status=true }
+        practice.apply { praStatus=true }
         return practiceRepository.save(practice)
     }
     fun update(practice:Practice):Practice {

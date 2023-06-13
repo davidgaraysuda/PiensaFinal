@@ -10,7 +10,12 @@ class Specific {
     @Id
     @Column(updatable = false)
     var id: Long? = null
-    var status:Boolean?=null
+    @Column(name = "sag_status")
+    var sagStatus: Boolean? = null
+    @Column(name="agreement_id")
+    var agreementId:Long?=null
     @Column(name="career_id")
     var careerId:Long?=null
+    @Column(name="teacher_id")
+    var teacherId:Long?=null
 }

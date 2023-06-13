@@ -28,7 +28,7 @@ class TeacherService {
 
     fun save(teacher:Teacher):Teacher{
         teacher.apply {
-            status=true
+            teStatus=teacher.teStatus
         }
         return teacherRepository.save(teacher)
     }

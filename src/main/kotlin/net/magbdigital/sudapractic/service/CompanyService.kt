@@ -2,8 +2,10 @@ package net.magbdigital.sudapractic.service
 
 import net.magbdigital.sudapractic.model.Carrera
 import net.magbdigital.sudapractic.model.Company
+import net.magbdigital.sudapractic.model.CompanyView
 import net.magbdigital.sudapractic.model.Student
 import net.magbdigital.sudapractic.repository.CompanyRepository
+import net.magbdigital.sudapractic.repository.CompanyViewRepository
 import net.magbdigital.sudapractic.repository.StudentRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -13,6 +15,9 @@ class CompanyService {
     @Autowired
     lateinit var companyRepository: CompanyRepository
 
+    @Autowired
+    lateinit var companyViewRepository: CompanyViewRepository
+
     fun list(): List<Company> {
 
         return companyRepository.findAll()
@@ -21,9 +26,13 @@ class CompanyService {
         return companyRepository.findById(id)
     }
 
+    fun listCompany ():List<CompanyView> {
+        return companyViewRepository.findAll()
+    }
+
     fun save(company:Company):Company{
         company.apply {
-            status=true
+            coStatus=company.coStatus
         }
         return companyRepository.save(company)
     }

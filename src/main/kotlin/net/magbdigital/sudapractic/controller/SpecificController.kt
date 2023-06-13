@@ -1,8 +1,6 @@
 package net.magbdigital.sudapractic.controller
 
-import net.magbdigital.sudapractic.model.Company
-import net.magbdigital.sudapractic.model.Student
-import net.magbdigital.sudapractic.model.Specific
+import net.magbdigital.sudapractic.model.*
 import net.magbdigital.sudapractic.service.StudentService
 import net.magbdigital.sudapractic.service.SpecificService
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,6 +17,11 @@ class SpecificController {
     @GetMapping
     fun list(): List<Specific>{
         return specificService.list()
+    }
+
+    @GetMapping("/list")
+    fun listSpecificFull (): List<SpecificView>{
+        return specificService.listSpecific()
     }
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): Specific?{

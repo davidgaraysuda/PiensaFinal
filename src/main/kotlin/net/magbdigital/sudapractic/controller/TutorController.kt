@@ -1,10 +1,6 @@
 package net.magbdigital.sudapractic.controller
 
-import net.magbdigital.sudapractic.model.Company
-import net.magbdigital.sudapractic.model.Student
 import net.magbdigital.sudapractic.model.Tutor
-import net.magbdigital.sudapractic.model.TutorView
-import net.magbdigital.sudapractic.service.StudentService
 import net.magbdigital.sudapractic.service.TutorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
@@ -24,10 +20,6 @@ class TutorController {
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): Tutor?{
         return tutorService.listById(id)
-    }
-    @GetMapping("/with/empresa")
-    fun listEmpresa(): List<TutorView>{
-        return tutorService.listEmpresa()
     }
 
     @PostMapping

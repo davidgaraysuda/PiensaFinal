@@ -1,22 +1,21 @@
 package net.magbdigital.sudapractic.model
 
+import java.sql.Date
 import javax.persistence.*
 
 @Entity
-@Table(name="tutor_view")
-class TutorView {
+@Table(name="company_view")
+class CompanyView {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(updatable = false)
     var id: Long? = null
-
     var name:String? = null
-    var email:String? = null
     var phone:String? = null
-    var alternative:String? = null
+    var contact:String? = null
+    var coordinates:String? = null
     var status: Boolean? = null
-    @Column(name="company_id")
-    var companyId: Long? = null
-    var empresa:String? = null
-
+    @Column(name = "tutor_id")
+    var tutorId: Long? = null
+    var tutor:String?=null
 }

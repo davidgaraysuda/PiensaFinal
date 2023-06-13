@@ -4,7 +4,7 @@ import java.util.Date
 import javax.persistence.*
 
 @Entity
-@Table(name="activity_Detail")
+@Table(name="activity_detail")
 class ActivityDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -12,10 +12,7 @@ class ActivityDetail {
     var id: Long? = null
     @Column(name="activities_id")
     var activitiesId: Long? = null
-
     @Column(name="detail_id")
     var detailId: Long? = null
-    var student:Long?=null
-    var act:String?=null
-
+    var checking:Boolean?=null
 }

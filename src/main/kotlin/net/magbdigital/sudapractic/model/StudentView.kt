@@ -14,10 +14,11 @@ class StudentView {
     var lastname:String? = null
     var email:String? = null
     var phone:String? = null
-    var status: Boolean? = null
+    @Column(name="s_state")
+    var sState: String? = null
     @Column(name="career_id")
     var careerId: Long? = null
-    var carrera:String?=null
+    var career:String?=null
 
 
 

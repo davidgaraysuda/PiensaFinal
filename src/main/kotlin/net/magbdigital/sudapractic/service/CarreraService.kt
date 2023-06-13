@@ -1,11 +1,6 @@
 package net.magbdigital.sudapractic.service
-import net.magbdigital.sudapractic.model.Carrera
-import net.magbdigital.sudapractic.model.CarreraView
-import net.magbdigital.sudapractic.model.Company
-import net.magbdigital.sudapractic.model.TutorView
+import net.magbdigital.sudapractic.model.*
 import net.magbdigital.sudapractic.repository.CarreraRepository
-import net.magbdigital.sudapractic.repository.CarreraViewRepository
-import net.magbdigital.sudapractic.repository.TutorViewRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -13,8 +8,7 @@ import org.springframework.stereotype.Service
 class CarreraService {
     @Autowired
     lateinit var carreraRepository: CarreraRepository
-    @Autowired
-    lateinit var CarreraViewRepository: CarreraViewRepository
+
 
 
     fun list(): List<Carrera> {

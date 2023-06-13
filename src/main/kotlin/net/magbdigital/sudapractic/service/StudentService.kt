@@ -44,7 +44,7 @@ lateinit var activityDetailViewRepository: ActivityDetailViewRepository
 
     fun save(student: Student): Student {
         student.apply {
-            status = true
+            nui = String()
         }
         return studentRepository.save(student)
     }
@@ -79,8 +79,7 @@ lateinit var activityDetailViewRepository: ActivityDetailViewRepository
 
         datosReporteDto.nombreCompleto = student.name + " " + student.lastname
         datosReporteDto.identificaciob = student.nui.toString()
-        datosReporteDto.nombreCarrera = studentView.carrera + " "
-        datosReporteDto.nombreInstirucionBeneficiaria = practiceView.empresa + " "
+        datosReporteDto.nombreCarrera = studentView.career + " "
 
         var simpleDateFormat = SimpleDateFormat("LLLL")
         var dateTime = simpleDateFormat.format(practiceView.startDate).toString()

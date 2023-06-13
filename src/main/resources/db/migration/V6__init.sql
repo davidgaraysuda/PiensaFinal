@@ -1,1 +1,0 @@
-alter table specific_agreement add column id serial primary key;

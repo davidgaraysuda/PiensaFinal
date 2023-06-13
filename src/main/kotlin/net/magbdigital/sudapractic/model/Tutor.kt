@@ -10,11 +10,11 @@ class Tutor {
     @Column(updatable = false)
     var id: Long? = null
     var name:String? = null
-    var email:String? = null
     var phone:String? = null
     var alternative:String? = null
-    var status: Boolean? = null
-    @Column(name="company_id")
-    var companyId: Long? = null
+    @Column(name="is_main")
+    var isMain:Boolean?=null
+    @Column(name="tu_status")
+    var tuStatus:Boolean? = null
 
 }

@@ -18,6 +18,10 @@ class AgreementController {
         return agreementService.list()
     }
 
+    @GetMapping("/full")
+    fun listFull(): List<AgreementView>{
+        return agreementService.listFull()
+    }
 
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): Agreement?{

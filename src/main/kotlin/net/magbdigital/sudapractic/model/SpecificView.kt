@@ -1,6 +1,5 @@
 package net.magbdigital.sudapractic.model
 
-import java.sql.Date
 import javax.persistence.*
 
 @Entity
@@ -10,10 +9,15 @@ class SpecificView {
     @Id
     @Column(updatable = false)
     var id: Long? = null
-    var status:Boolean?=null
-    @Column(name="company_id")
-    var companyId:Long?=null
+    @Column(name = "sag_status")
+    var sagStatus: Boolean? = null
+    @Column(name="agreement_id")
+    var agreementId:Long?=null
+    var link:String?=null
     @Column(name="career_id")
     var careerId:Long?=null
-    var carrera:String?=null
+    var career:String?=null
+    @Column(name="teacher_id")
+    var teacherId:Long?=null
+    var teacher:String?=null
 }

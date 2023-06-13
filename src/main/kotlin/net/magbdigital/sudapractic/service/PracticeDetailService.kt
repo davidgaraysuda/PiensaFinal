@@ -34,7 +34,6 @@ class PracticeDetailService {
             startTime=it.startTime.toString()
             endTime=it.endTime.toString()
             totalHours=it.totalHours.toString()
-            observations=it.observations
             activityDetails=  activityDetailService.listActivitiesDetailFull(it.id!!)
 
         }

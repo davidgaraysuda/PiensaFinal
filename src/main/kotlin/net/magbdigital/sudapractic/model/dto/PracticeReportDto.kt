@@ -5,7 +5,8 @@ class PracticeReportDto (
     var endDate: String? = "",
     var studentName: String? = "",
     var studentNui: String? = "",
-    var careerName: String? = "",
-    var companyName: String? = "",
+    var teacherName: String? = "",
+    var tutorName: String? = "",
+    var activityName: String?="",
     var practiceDetails: List<PracticeDetailDto> = ArrayList()
 )

@@ -10,7 +10,6 @@ class Activity {
     @Column(updatable = false)
     var id: Long? = null
     var description:String? = null
-    var observation:String?=null
     @Column(name="career_id")
     var careerId: Long? = null
 }

@@ -1,5 +1,6 @@
 package net.magbdigital.sudapractic.model
 
+import java.sql.Date
 import javax.persistence.*
 
 @Entity
@@ -12,5 +13,9 @@ class Company {
     var name:String? = null
     var phone:String? = null
     var contact:String? = null
-    var status: Boolean? = null
+    var coordinates:String? = null
+    @Column(name = "co_status")
+    var coStatus: Boolean? = null
+    @Column(name = "tutor_id")
+    var tutorId: Long? = null
 }

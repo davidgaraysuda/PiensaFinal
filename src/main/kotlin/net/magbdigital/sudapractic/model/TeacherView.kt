@@ -11,8 +11,9 @@ class TeacherView {
     var id: Long? = null
     var name:String? = null
     var phone:String? = null
-    var status: Boolean? = null
+    @Column(name="te_status")
+    var teStatus: Boolean? = null
     @Column(name="career_id")
     var careerId: Long? = null
-    var carrera:String? = null
+    var career:String? = null
 }

@@ -2,6 +2,7 @@ package net.magbdigital.sudapractic.controller
 
 import net.magbdigital.sudapractic.model.Carrera
 import net.magbdigital.sudapractic.model.Company
+import net.magbdigital.sudapractic.model.CompanyView
 import net.magbdigital.sudapractic.model.Student
 import net.magbdigital.sudapractic.service.CompanyService
 import net.magbdigital.sudapractic.service.StudentService
@@ -26,6 +27,11 @@ class CompanyController {
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): Company?{
         return companyService.listById(id)
+    }
+
+    @GetMapping("/with/tutor")
+    fun listCompany(): List<CompanyView>{
+        return companyService.listCompany()
     }
 
     @PostMapping
